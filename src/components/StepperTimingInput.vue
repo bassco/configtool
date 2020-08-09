@@ -11,29 +11,29 @@
 
 <template>
 	<div>
-		<b-form-input :id="id" ref="inputUnitless" v-model="drive.stepperDriverTimings" title="Stepper Timings"/> 
+		<b-form-input :id="id" ref="inputUnitless" v-model="drive.stepperDriverTimings" title="Stepper Timings"/>
 
 		<b-popover :target="id" :show.sync="popoverShown" placement="right" title="Custom Stepper Timings" triggers="focus" @show="onShow">
 			<b-form-group horizontal label="Step Pulse Width:" label-class="text-left" class="tlabel">
 				<b-input-group append="μs" class="tinput">
 					<b-input v-model.number="parameters.pWidth" min="0" type="number" step="any" />
 				</b-input-group>
-			</b-form-group>		
+			</b-form-group>
 			<b-form-group horizontal label="Step Pulse Interval:" label-class="text-left" class="tlabel">
 				<b-input-group append="μs" class="tinput">
 					<b-input v-model.number="parameters.pInterval" min="0" type="number" step="any" />
 				</b-input-group>
-			</b-form-group>		
+			</b-form-group>
 			<b-form-group horizontal label="Direction Setup Time:" label-class="text-left" class="tlabel">
 				<b-input-group append="μs" class="tinput">
 					<b-input v-model.number="parameters.dirSetup" min="0" type="number" step="any" />
 				</b-input-group>
-			</b-form-group>		
+			</b-form-group>
 			<b-form-group horizontal label="Direction Hold Time:" label-class="text-left" class="tlabel">
 				<b-input-group append="μs" class="tinput">
 					<b-input v-model.number="parameters.dirHold" min="0" type="number" step="any" />
 				</b-input-group>
-			</b-form-group>		
+			</b-form-group>
 			<b-button size="sm" variant="primary" :disabled="!isValid" @click="apply">
 				<font-awesome-icon icon="check"></font-awesome-icon> Set
 			</b-button>
@@ -102,7 +102,7 @@ export default {
 		drive: {
 			type: Object,
 			required: true
-		},		
+		},
 	},
 }
 </script>

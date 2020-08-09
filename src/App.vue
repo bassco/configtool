@@ -33,7 +33,7 @@ input::-webkit-inner-spin-button {
 				</b-navbar-nav>
 			</b-container>
 		</b-navbar>
-		
+
 		<b-form ref="mainForm">
 			<keep-alive>
 				<router-view></router-view>
@@ -205,6 +205,7 @@ export default {
 			if (this.addRRF && this.template.standalone) {
 				try {
 					// Get GitHub list of releases and assets. Do NOT get drafts and prereleases
+					// TODO: check that this URL is valid
 					const releaseInfo = await Compiler.downloadFile('https://api.github.com/repos/dc42/RepRapFirmware/releases', 'json');
 					const firmware = this.template.firmware;
 					let latestRelease = null;
@@ -249,6 +250,7 @@ export default {
 			if (this.addDWC && this.template.standalone) {
 				try {
 					// Get GitHub list of releases and assets. Do NOT get drafts and prereleases
+					// TODO: check that this URL is valid
 					const releaseInfo = await Compiler.downloadFile('https://api.github.com/repos/chrishamm/DuetWebControl/releases', 'json');
 					let latestRelease = null;
 					releaseInfo.forEach(function(item) {
