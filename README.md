@@ -43,7 +43,9 @@ npm run build
 
 If you wish to enhance this tool, please feel free to do so - generally this is appreciated. However, pull requests will be only accepted if they are clean and match the used coding/markup style.
 
-## Docker compose setup
+## Docker local development environment
+
+### docker-compose setup
 
 By using docker-compose we can run a local development environment without installing any software on the local machine, apart from docker and docker-compose.
 
@@ -61,4 +63,11 @@ docker-compose up web -d
 open http://localhost:8080
 ```
 
+### docker-compose tear down
+
+Remove the running container
+
+```shell
+docker-compose down -rm
+```
 

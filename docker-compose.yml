@@ -5,7 +5,7 @@ networks:
 services:
   web:
     image: php:7.4-apache
-    container_name: php
+    container_name: web
     volumes:
       - ./dist:/var/www/html
     ports:
